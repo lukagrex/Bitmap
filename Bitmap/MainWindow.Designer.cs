@@ -37,8 +37,10 @@ namespace Bitmap
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.picturePanel = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.picturePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -98,18 +100,27 @@ namespace Bitmap
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 31);
+            this.pictureBox.Location = new System.Drawing.Point(3, 3);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(776, 407);
+            this.pictureBox.Size = new System.Drawing.Size(770, 401);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
+            // 
+            // picturePanel
+            // 
+            this.picturePanel.Controls.Add(this.pictureBox);
+            this.picturePanel.Location = new System.Drawing.Point(12, 31);
+            this.picturePanel.Name = "picturePanel";
+            this.picturePanel.Size = new System.Drawing.Size(776, 407);
+            this.picturePanel.TabIndex = 2;
+            this.picturePanel.AutoScroll = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.picturePanel);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
@@ -117,6 +128,7 @@ namespace Bitmap
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.picturePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +144,7 @@ namespace Bitmap
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Panel picturePanel;
     }
 }
 

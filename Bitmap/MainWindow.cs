@@ -20,10 +20,12 @@ namespace Bitmap
         private void browseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files*.jpg; *.png; *.bmp)| *.jpg; *.png; *.bmp";
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                //TODO
+                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             }
         }
     }
