@@ -31,10 +31,10 @@ namespace Bitmap
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.picturePanel = new System.Windows.Forms.Panel();
@@ -65,6 +65,19 @@ namespace Bitmap
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // browseToolStripMenuItem
+            // 
+            this.browseToolStripMenuItem.Name = "browseToolStripMenuItem";
+            this.browseToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.browseToolStripMenuItem.Text = "Browse";
+            this.browseToolStripMenuItem.Click += new System.EventHandler(this.browseToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -79,41 +92,30 @@ namespace Bitmap
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // browseToolStripMenuItem
-            // 
-            this.browseToolStripMenuItem.Name = "browseToolStripMenuItem";
-            this.browseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.browseToolStripMenuItem.Text = "Browse";
-            this.browseToolStripMenuItem.Click += new System.EventHandler(this.browseToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox.Location = new System.Drawing.Point(3, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(770, 401);
+            this.pictureBox.Size = new System.Drawing.Size(797, 405);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             // 
             // picturePanel
             // 
-            this.picturePanel.Controls.Add(this.pictureBox);
-            this.picturePanel.Location = new System.Drawing.Point(12, 31);
-            this.picturePanel.Name = "picturePanel";
-            this.picturePanel.Size = new System.Drawing.Size(776, 407);
-            this.picturePanel.TabIndex = 2;
             this.picturePanel.AutoScroll = true;
+            this.picturePanel.AutoSize = true;
+            this.picturePanel.Controls.Add(this.pictureBox);
+            this.picturePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picturePanel.Location = new System.Drawing.Point(0, 28);
+            this.picturePanel.Name = "picturePanel";
+            this.picturePanel.Size = new System.Drawing.Size(800, 422);
+            this.picturePanel.TabIndex = 2;
             // 
             // MainWindow
             // 
