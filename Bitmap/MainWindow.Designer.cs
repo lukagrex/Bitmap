@@ -68,15 +68,16 @@ namespace Bitmap
             // browseToolStripMenuItem
             // 
             this.browseToolStripMenuItem.Name = "browseToolStripMenuItem";
-            this.browseToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.browseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.browseToolStripMenuItem.Text = "Browse";
             this.browseToolStripMenuItem.Click += new System.EventHandler(this.browseToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -106,9 +107,9 @@ namespace Bitmap
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
+            this.pictureBox.MouseHover += new System.EventHandler(this.picturePanel_MouseHover);
             this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             this.pictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseUp);
-            this.pictureBox.MouseHover += new System.EventHandler(this.picturePanel_MouseHover);
             // 
             // picturePanel
             // 
@@ -120,10 +121,10 @@ namespace Bitmap
             this.picturePanel.Name = "picturePanel";
             this.picturePanel.Size = new System.Drawing.Size(832, 375);
             this.picturePanel.TabIndex = 2;
+            this.picturePanel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.picturePanel_KeyUp);
+            this.picturePanel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.picturePanel_KeyDown);
             this.picturePanel.MouseHover += new System.EventHandler(this.picturePanel_MouseHover);
             this.picturePanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.picturePanel_MouseWheel);
-            this.picturePanel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.picturePanel_KeyDown);
-            this.picturePanel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.picturePanel_KeyUp);
             // 
             // MainWindow
             // 

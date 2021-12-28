@@ -17,8 +17,8 @@ namespace Bitmap
         private int yPosition;
         private bool imgIsLoaded = false;
         private bool ctrlIsPressed = false;
-        private Image image;
         private double zoomFactor = 1;
+        private Image image;
 
         public MainWindow()
         {
@@ -32,9 +32,11 @@ namespace Bitmap
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
+                image?.Dispose();
                 image = Image.FromFile(openFileDialog.FileName);
                 pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
                 pictureBox.Image = image;
+                zoomFactor = 1;
                 imgIsLoaded = true;
             }
         }
@@ -84,11 +86,11 @@ namespace Bitmap
                 {
                     if (e.Delta > 0)
                     {
-                        zoomFactor *= 1.2;
+                        zoomFactor = Math.Min(5, zoomFactor * 1.2);
                     }
                     else
                     {
-                        zoomFactor *= 0.8;
+                        zoomFactor = Math.Max(0.05, zoomFactor * 0.8);
                     }
 
                     var bitmap = new System.Drawing.Bitmap(image);
@@ -102,6 +104,11 @@ namespace Bitmap
         private void picturePanel_MouseHover(object sender, EventArgs e)
         {
             picturePanel.Focus();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
