@@ -16,7 +16,7 @@ namespace Bitmap
         private int xPosition;
         private int yPosition;
         private bool imgIsLoaded = false;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +31,10 @@ namespace Bitmap
             {
                 var image = Image.FromFile(openFileDialog.FileName);
                 //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
-                pictureBox.Image = image;
-                imgIsLoaded = true;
                 pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+                pictureBox.Image = image; 
+                imgIsLoaded = true;
+                Console.WriteLine(pictureBox.Top); 
                 
             }
         }
@@ -57,8 +58,10 @@ namespace Bitmap
         {
             var pb = sender as PictureBox;
             if (!currentlyDragging || !imgIsLoaded || pb == null) return;
-            pb.Top = pb.Top + e.Y - yPosition;
-            pb.Left = pb.Left + e.X - xPosition;
+            var newPosTop = pb.Top + e.Y - yPosition;
+            var newPosLeft = pb.Left + e.X - xPosition;
+            pb.Top = Math.Max(5, newPosTop);
+            pb.Left = Math.Max(5, newPosLeft);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Bitmap
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.Size = new System.Drawing.Size(832, 30);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -62,7 +62,7 @@ namespace Bitmap
             this.browseToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // browseToolStripMenuItem
@@ -81,7 +81,7 @@ namespace Bitmap
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // helpToolStripMenuItem
@@ -89,7 +89,7 @@ namespace Bitmap
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -100,9 +100,9 @@ namespace Bitmap
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox.Location = new System.Drawing.Point(5, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(797, 405);
+            this.pictureBox.Size = new System.Drawing.Size(100, 100);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
@@ -115,16 +115,16 @@ namespace Bitmap
             this.picturePanel.AutoSize = true;
             this.picturePanel.Controls.Add(this.pictureBox);
             this.picturePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picturePanel.Location = new System.Drawing.Point(0, 28);
+            this.picturePanel.Location = new System.Drawing.Point(0, 30);
             this.picturePanel.Name = "picturePanel";
-            this.picturePanel.Size = new System.Drawing.Size(800, 422);
+            this.picturePanel.Size = new System.Drawing.Size(832, 373);
             this.picturePanel.TabIndex = 2;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(832, 403);
             this.Controls.Add(this.picturePanel);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
