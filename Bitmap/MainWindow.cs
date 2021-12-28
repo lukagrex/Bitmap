@@ -18,6 +18,7 @@ namespace Bitmap
         private bool imgIsLoaded = false;
         private bool ctrlIsPressed = false;
         private double zoomFactor = 1;
+        public double zoomDelta = 0.2;
         private Image image;
 
         public MainWindow()
@@ -86,11 +87,11 @@ namespace Bitmap
                 {
                     if (e.Delta > 0)
                     {
-                        zoomFactor = Math.Min(5, zoomFactor * 1.2);
+                        zoomFactor = Math.Min(5, zoomFactor * (1 + zoomDelta));
                     }
                     else
                     {
-                        zoomFactor = Math.Max(0.05, zoomFactor * 0.8);
+                        zoomFactor = Math.Max(0.05, zoomFactor * (1 - zoomDelta));
                     }
 
                     var bitmap = new System.Drawing.Bitmap(image);
@@ -110,5 +111,12 @@ namespace Bitmap
         {
             this.Close();
         }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form settingsForm = new Settings(this);
+            settingsForm.ShowDialog();
+        }
+
     }
 }
