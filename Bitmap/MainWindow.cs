@@ -16,6 +16,9 @@ namespace Bitmap
         private int xPosition;
         private int yPosition;
         private bool imgIsLoaded = false;
+        private bool ctrlIsPressed = false;
+        private Image image;
+        private double zoomFactor = 1;
 
         public MainWindow()
         {
@@ -29,13 +32,10 @@ namespace Bitmap
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                var image = Image.FromFile(openFileDialog.FileName);
-                //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
+                image = Image.FromFile(openFileDialog.FileName);
                 pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-                pictureBox.Image = image; 
+                pictureBox.Image = image;
                 imgIsLoaded = true;
-                Console.WriteLine(pictureBox.Top); 
-                
             }
         }
 
@@ -62,6 +62,46 @@ namespace Bitmap
             var newPosLeft = pb.Left + e.X - xPosition;
             pb.Top = Math.Max(5, newPosTop);
             pb.Left = Math.Max(5, newPosLeft);
+        }
+
+        private void picturePanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(!e.Control) return;
+            ctrlIsPressed = true;
+        }
+
+        private void picturePanel_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Control) return;
+            ctrlIsPressed = false;
+        }
+
+        private void picturePanel_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (imgIsLoaded)
+            {
+                if (ctrlIsPressed)
+                {
+                    if (e.Delta > 0)
+                    {
+                        zoomFactor *= 1.2;
+                    }
+                    else
+                    {
+                        zoomFactor *= 0.8;
+                    }
+
+                    var bitmap = new System.Drawing.Bitmap(image);
+                    Size newSize = new Size((int)(bitmap.Width * zoomFactor), (int)(bitmap.Height * zoomFactor));
+                    System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(bitmap, newSize);
+                    pictureBox.Image = bmp;
+                }
+            }
+        }
+
+        private void picturePanel_MouseHover(object sender, EventArgs e)
+        {
+            picturePanel.Focus();
         }
     }
 }
