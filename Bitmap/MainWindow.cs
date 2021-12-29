@@ -118,5 +118,16 @@ namespace Bitmap
             settingsForm.ShowDialog();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form aboutForm = new About();
+            aboutForm.ShowDialog();
+        }
+
+        private void howToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form howToForm = new HowTo();
+            howToForm.ShowDialog();
+        }
     }
 }
