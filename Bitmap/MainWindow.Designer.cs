@@ -158,6 +158,7 @@ namespace Bitmap
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
             this.Text = "Bitmap";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

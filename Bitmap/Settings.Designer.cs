@@ -107,6 +107,7 @@ namespace Bitmap
             this.Controls.Add(this.zoomDeltaTrackBar);
             this.Controls.Add(this.label1);
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)(this.zoomDeltaTrackBar)).EndInit();
             this.ResumeLayout(false);
