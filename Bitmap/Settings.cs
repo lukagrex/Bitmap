@@ -18,6 +18,7 @@ namespace Bitmap
         {
             InitializeComponent();
             mainWindow = main;
+            zoomDeltaTrackBar.Value = (int)(main.zoomDelta * 100);
         }
 
         private void settingsCancelButton_Click(object sender, EventArgs e)
