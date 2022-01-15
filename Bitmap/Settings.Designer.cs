@@ -78,6 +78,7 @@ namespace Bitmap
             // 
             // settingsCancelButton
             // 
+            this.settingsCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.settingsCancelButton.Location = new System.Drawing.Point(68, 100);
             this.settingsCancelButton.Name = "settingsCancelButton";
             this.settingsCancelButton.Size = new System.Drawing.Size(83, 30);
@@ -97,8 +98,10 @@ namespace Bitmap
             // 
             // Settings
             // 
+            this.AcceptButton = this.settingsOKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.settingsCancelButton;
             this.ClientSize = new System.Drawing.Size(351, 142);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.settingsCancelButton);
@@ -106,6 +109,8 @@ namespace Bitmap
             this.Controls.Add(this.zoomDeltaTextBox);
             this.Controls.Add(this.zoomDeltaTrackBar);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
