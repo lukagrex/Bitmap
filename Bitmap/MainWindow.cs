@@ -18,7 +18,7 @@ namespace Bitmap
         private bool imgIsLoaded = false;
         private bool ctrlIsPressed = false;
         private double zoomFactor = 1;
-        public double zoomDelta = 0.2;
+        internal double zoomDelta = 0.2;
         private Image image;
 
         public MainWindow()

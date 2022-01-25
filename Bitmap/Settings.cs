@@ -28,7 +28,7 @@ namespace Bitmap
 
         private void settingsOKButton_Click(object sender, EventArgs e)
         {
-            mainWindow.zoomDelta = zoomDeltaTrackBar.Value * 0.01;
+            mainWindow.zoomDelta = Double.Parse(zoomDeltaTextBox.Text) * 0.01;
             this.Close();
         }
 
